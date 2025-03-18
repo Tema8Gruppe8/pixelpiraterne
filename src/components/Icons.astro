@@ -1,0 +1,60 @@
+---
+
+---
+
+<section>
+  <ul class="Icons">
+    <li><a href="#"><img src="img/samtaleforløb.png" alt="samtaleforløb" /> Samtaleforløb</a></li>
+    <li><a href="#"><img src="img/akutradgivning.png" alt="akutrådgivning" /> Akutrådgivning</a></li>
+    <li><a href="#"><img src="img/gruppef.png" alt="gruppeforløb" />Gruppeforløb</a></li>
+  </ul>
+</section>
+
+<style>
+  .Icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    text-align: center;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .Icons li {
+    list-style: none;
+    color: #236260;
+  }
+  .Icons li a {
+    text-decoration: none;
+    font-family: Cormorant Garamond;
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .Iconsli a:hover {
+    text-decoration: none;
+    font-family: Cormorant Garamond;
+    color: #011961;
+  }
+  .Icons li img {
+    height: 70px;
+    object-fit: contain;
+  }
+  @media screen and (min-width: 900px) {
+    .Icons li img {
+      height: 130px;
+    }
+    .Icons {
+      display: grid;
+      grid-template-columns: 1fr;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      gap: 200px;
+      width: 100%;
+      padding: 30px;
+    }
+  }
+</style>

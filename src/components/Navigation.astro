@@ -1,0 +1,160 @@
+---
+
+---
+
+<nav>
+  <p class="logo"><a href="#"><img src="public/img/logo.png" alt="" /></a></p>
+  <ul class="menu">
+    <li><a href="#">Om pårørende netværket</a></li>
+    <li><a href="#">Rådgivningstilbud</a></li>
+    <li><a href="#">Søg rådgivning</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+  <div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</nav>
+
+<style>
+  ul {
+    margin-top: 3.2rem;
+    text-align: right;
+    padding-right: 2rem;
+  }
+  li {
+    margin-left: 5%;
+    list-style: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    display: inline;
+  }
+  li a {
+    text-decoration: none;
+    font-family: Cormorant Garamond;
+    font-size: 1.5rem;
+    color: #000000;
+  }
+  li a :hover {
+    text-decoration: none;
+    font-family: Cormorant Garamond;
+    font-size: 1.7rem;
+    color: #011961;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    background-color: #f3edef;
+  }
+
+  @media screen and (min-width: 1200px) {
+    nav {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+  /************ Burgermenu **************/
+  .burger {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: fixed;
+    right: 35px;
+    top: 50px;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: #236260;
+    margin-bottom: 7px;
+    transition: 0.2s linear;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+    transition: 0.2s linear;
+    background-color: #236260;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+    background-color: #236260;
+  }
+  nav.active .menu {
+    display: block;
+    position: absolute;
+    right: 0%;
+    width: 40%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    background-color: #236260;
+    border-radius: 25px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  nav.active .menu li {
+    margin-left: 5%;
+    list-style: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #faf6f7;
+  }
+
+  .menu {
+    display: none;
+  }
+  @media screen and (min-width: 1200px) {
+    .burger {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+    }
+    ul {
+      justify-content: right;
+    }
+    .menu li {
+      display: inline;
+      cursor: pointer;
+    }
+    .menu a {
+      text-decoration: none;
+    }
+  }
+</style>
+<script>
+  /*Burger menu */
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", burgerClick);
+  function burgerClick() {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  }
+  menu.addEventListener("click", menuClick);
+  function menuClick() {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  }
+</script>

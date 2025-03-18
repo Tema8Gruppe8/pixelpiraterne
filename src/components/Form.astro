@@ -1,0 +1,46 @@
+---
+const { title } = Astro.props;
+---
+
+<article>
+  <div>
+    <h3>{title}</h3>
+    <p class="text_button">Lær mere!</p><p class="icon">^</p>
+  </div>
+  <div class="form">
+    <slot />
+  </div>
+  <script>
+    let isDisplayed = false;
+
+    document.querySelector(".text_button").addEventListener("click", onClick);
+
+    function onClick(event) {
+      if (isDisplayed == false) {
+        document.querySelector(".form").style.display = "block";
+        document.querySelector(".icon").style.rotate = "0deg";
+        isDisplayed = true;
+      } else {
+        document.querySelector(".form").style.display = "none";
+        document.querySelector(".icon").style.rotate = "180deg";
+        isDisplayed = false;
+      }
+    }
+  </script>
+</article>
+
+<style>
+  .form {
+    display: none;
+  }
+
+  .text_button {
+    display: inline-block;
+    text-decoration: underline;
+  }
+
+  .icon {
+    display: inline-block;
+    rotate: 180deg;
+  }
+</style>
