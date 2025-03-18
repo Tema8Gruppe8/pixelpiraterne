@@ -60,61 +60,68 @@ import Form from "./Form.astro";
       </div>
     </form>
   </Form>
-  <Form title="Ansøg om Telefonisk Samtale">
+  <Form title="Ansøg om en plads i Gruppeforløb">
     <form>
-      <label for="name">Navn:</label>
-      <input type="text" id="name" name="name" required />
-      <div class="checkbox-group">
-        <label class="sporgsmaal">Er du pårørende til nærtstående med misbrug? </label>
-
-        <label for="ja">Ja</label><input type="checkbox" id="ja" name="social[]" value="ja" />
-
-        <label for="nej">Nej</label>
-        <input type="checkbox" id="nej" name="social[]" value="nej" />
-
-        <label for="jeger/harvaeretmisbruger">Jeg har selv eller før haft et misbrug</label>
-        <input type="checkbox" id="jeger/harvaeretmisbruger" name="social[]" value="jeger/harvaeretmisbruger" />
-      </div>
-
-      <div class="checkbox-group">
-        <label class="sporgsmaal">Tilkendegiv medlemskab </label>
-
-        <label for="ja">Ja, jeg ønsker medlemskab</label><input type="checkbox" id="onskermedlem" name="social[]" value="onskermedlem" />
-
-        <label for="nej">Jeg er alleredemedlem</label>
-        <input type="checkbox" id="jegermedlem" name="social[]" value="jegermedlem" />
-      </div>
-
-      <label>Allerede medlem:</label>
-      <input type="text" id="alleredemedlemid" name="alleredemedlem" required />
-      <label class="sporgsmaal">Det er et kriterie at alle rådsøgere i samtaleforløb er medlem af foreningen. Medlemskabet er gratis. </label>
-
-      <label>E-mail:</label>
-      <input type="email" id="email" name="email" required />
+      <label>Navn:</label>
+      <input type="text" required />
+      <label>Email:</label>
+      <input type="email" required />
       <label>Telefon:</label>
-      <input type="tel" id="tel" name="telefon" required />
-      <label>Hvor gammel er du:</label>
-      <input type="text" id="alder" name="alder" required />
-      <label>Bopælsadresse:</label>
-      <input type="text" id="bopael" name="bopael" required />
+      <input type="tel" required />
+
+      <div class="checkbox-group">
+        <label class="sporgsmaal">Region </label>
+
+        <label>Hovedstaden</label><input type="checkbox" name="social[]" />
+        <label>Syddanmark</label><input type="checkbox" name="social[]" />
+        <label>Sjælland</label><input type="checkbox" name="social[]" />
+        <label>Midtjylland</label><input type="checkbox" name="social[]" />
+        <label>Nordjylland</label><input type="checkbox" name="social[]" />
+        <label>Fyn</label><input type="checkbox" name="social[]" />
+        <label>Andet</label><input type="checkbox" name="social[]" />
+        <input placeholder="Andet (specifier)" type="text" />
+      </div>
+      <div>
+        <input placeholder="Alder" type="text" />
+        <label class="sporgsmaal">Hvilken nationale grupper er du interesseret i</label>
+        <label>Gruppe for forældre (til unge/voksne i misbrug)</label><input type="checkbox" name="social[]" />
+        <label>Gruppe for partnere (ægtefælle/samlever)</label><input type="checkbox" name="social[]" />
+        <label>Gruppe for voksne børn (opvokset i hjem med misbrugsproblemer)</label><input type="checkbox" name="social[]" />
+        <label>Gruppe for forældre (til ung/voksen med dobbeltdiagnoase)</label><input type="checkbox" name="social[]" />
+        <label>Gruppe for søskende (bror/søster i misbrug)</label><input type="checkbox" name="social[]" />
+
+        <label>Andet</label><input type="checkbox" name="social[]" /><input placeholder="Andet (specifier)" type="text" />
+      </div>
+      <div>
+        <label class="sporgsmaal">Hvor længe har du været pårørende?</label>
+        <label>1-2 år</label><input type="checkbox" name="social[]" />
+        <label>2-5 år</label><input type="checkbox" name="social[]" />
+        <label>Mere end 5 år</label><input type="checkbox" name="social[]" />
+        <label>Andet</label><input type="checkbox" name="social[]" /><input placeholder="Andet (specifier)" type="text" />
+      </div>
       <div class="form-felt">
         <div>
-          <label>
-            <textarea name="besked" placeholder="Skriv din besked her" rows="5"></textarea>
-          </label>
+          <label class="sporgsmaal">Beskriv din pårørendesituation (Dette deles kun internt og sikre, at du tilknyttes den rette gruppe og respektive gruppeleder.)</label>
+
+          <textarea name="besked" placeholder="Min pårørendesituation er..."></textarea>
         </div>
       </div>
-      <div class="checkbox-group">
-        <label class="sporgsmaal">Hvor har du hørt om os? </label>
-
-        <label for="kommunen">Kommunen</label><input type="checkbox" id="kommunen" name="social[]" value="kommunen" />
-        <label for="laege">Min læge</label><input type="checkbox" id="laege" name="social[]" value="laege" />
-        <label for="socialemedier">Sociale medier</label><input type="checkbox" id="socialemedier" name="social[]" value="socialemedier" />
-        <label for="bekendte">Igennem venner og bekendte</label><input type="checkbox" id="bekendte" name="social[]" value="bekendte" />
-        <label for="henvist">Jeg blev henvist fra et andet tilbud</label><input type="checkbox" id="henvist" name="social[]" value="henvist" />
-        <label for="selvfunder">Jeg har selv fundet jer</label><input type="checkbox" id="selvfunder" name="social[]" value="selvfunder" />
-        <label for="Andet">Andet</label><input type="checkbox" id="Andet" name="social[]" value="Andet" />
+      <div>
+        <label class="sporgsmaal">Kan du deltage i gruppen online via din PC eller mobil?</label>
+        <label>Ja</label><input type="checkbox" name="social[]" />
+        <label>Nej</label><input type="checkbox" name="social[]" />
       </div>
+      <div>
+        <label class="sporgsmaal">Har du tidligere været i gruppeforløb til misbrugsramte?</label>
+        <label>Ja</label><input type="checkbox" name="social[]" />
+        <label>Nej</label><input type="checkbox" name="social[]" />
+      </div>
+      <div>
+        <label class="sporgsmaal">Ønsker du at vi behandler din ansøgning med udgangspunkt i denne tilmelding, venligst svar ja.</label>
+        <label>Ja</label><input type="checkbox" name="social[]" />
+        <label>Nej</label><input type="checkbox" name="social[]" />
+      </div>
+      <input placeholder="Har du noget at tilføje?" type="text" />
     </form>
   </Form>
 </section>
