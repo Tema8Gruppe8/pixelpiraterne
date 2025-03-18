@@ -3,37 +3,45 @@ const { title } = Astro.props;
 ---
 
 <article>
-  <div>
+  <div class="ansog">
     <h3>{title}</h3>
-    <p class="text_button">Lær mere!</p><p class="icon">^</p>
+    <p class="text_button">Læs mere!</p><p class="text_icon">^</p>
   </div>
-  <div class="form">
+  <div class="form form-container">
     <slot />
   </div>
   <script>
-    let isDisplayed = false;
+    const textButtons = document.querySelectorAll(".text_button");
 
-    document.querySelector(".text_button").addEventListener("click", onClick);
+    textButtons.forEach((button) => {
+      button.parentElement.parentElement.querySelector(".form").style.display = "none";
+      button.addEventListener("click", onClick);
+    });
 
     function onClick(event) {
-      if (isDisplayed == false) {
-        document.querySelector(".form").style.display = "block";
-        document.querySelector(".icon").style.rotate = "0deg";
-        isDisplayed = true;
+      const form = event.target.parentElement.parentElement.querySelector(".form");
+      const icon = event.target.parentElement.querySelector(".text_icon");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+        icon.style.rotate = "0deg";
       } else {
-        document.querySelector(".form").style.display = "none";
-        document.querySelector(".icon").style.rotate = "180deg";
-        isDisplayed = false;
+        form.style.display = "none";
+        icon.style.rotate = "180deg";
       }
     }
   </script>
 </article>
 
 <style>
-  .form {
-    display: none;
+  .form-container {
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+    border: solid #abe4dc;
+    justify-self: center;
+    margin-top: 30px;
   }
-
   .text_button {
     display: inline-block;
     text-decoration: underline;
@@ -42,5 +50,29 @@ const { title } = Astro.props;
   .icon {
     display: inline-block;
     rotate: 180deg;
+  }
+
+  .ansog {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    background-color: #abe4dc;
+    border-radius: 20px;
+    height: 120px;
+    align-content: center;
+  }
+  .ansog h2 {
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: 900px) {
+    .ansog1 {
+      grid-column: 1/2;
+      grid-row: 2;
+    }
+    .ansog2 {
+      grid-column: 2/3;
+      grid-row: 2;
+    }
   }
 </style>
