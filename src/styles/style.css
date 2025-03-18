@@ -29,15 +29,25 @@ main {
   background-color: #faf6f7;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: Cormorant Garamond;
   font-weight: 700;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: Cormorant Garamond;
   font-weight: 500;
 }
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
 .knap {
   background-color: #abe4dc;
   color: #1d4342;
