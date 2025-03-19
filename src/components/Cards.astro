@@ -11,9 +11,9 @@
       </div>
 
       <p>Forløbet foregår over telefon og henvender sig ligesom akutrådgivningen til pårørende og misbrugsramte.</p>
-      <a class="laesmereknap" href="">Læs mere</a>
+      <button class="laesmereknap">Læs mere</button>
     </div>
-    <div>
+    <div class="foldud">
       <p>
         ​Et samtaleforløb i rådgivningen er et tillidsfuldt og fortroligt forløb mellem dig og din rådgiver, som I har over længere tid. <br />
         Et forløb varer typisk 4-12 uger alt efter hvor mange samtaler du har, men er fleksibelt i intensitet alt efter dit behov. <br />
@@ -29,9 +29,9 @@
       </div>
 
       <p>Akutrådgivningen tilbyder gratis, fortrolige samtaler til misbrugsramte og pårørende.</p>
-      <a class="laesmereknap" href="">Læs mere</a>
+      <button class="laesmereknap">Læs mere</button>
     </div>
-    <div>
+    <div class="foldud">
       <p>
         Rådgivningstelefonen er et gratis og fortroligt samtaletilbud til: <br />
         <br />
@@ -52,9 +52,9 @@
       </div>
 
       <p>​Et gruppeforløb samler pårørende med samme type pårørenderelation til online møder. Samtalerne faciliteres af vores dygtige gruppeledere. Vores nuværende grupper henvender sig til følgende pårørende: Forældre, partnere og søskende til misbrugsramte samt voksne børn opvokset i en misbrugsramt familie.</p>
-      <a class="laesmereknap" href="">Læs mere</a>
+      <button class="laesmereknap">Læs mere</button>
     </div>
-    <div>
+    <div class="foldud">
       <p>
         Grupperne er for dig, der er pårørende til en person i rusmiddelmisbrug og -afhængighed, og som ønsker andre ligesindede at dele dine oplevelser med. <br />
         <br />
@@ -80,7 +80,6 @@
     justify-content: flex-start;
   }
   .cardh3 h3 {
- 
     font-family: Garamond;
     display: flex;
     align-items: center;
@@ -92,7 +91,6 @@
   }
   .card p {
     font-family: poppins;
-
     padding-bottom: 10px;
   }
   .card li {
@@ -100,6 +98,36 @@
     font-size: 0.9rem;
     padding-bottom: 10px;
   }
+
+.foldud {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  grid-column: 2;
+  padding: 0 0 0 30px;
+}
+
+
+.laesmereknap {
+  font-family: Poppins, sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #011961;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover-effekt */
+.laesmereknap:hover {
+  background-color: #abe4dc;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
   @media screen and (min-width: 900px) {
     .cards {
       padding-right: 200px;
@@ -117,3 +145,21 @@
     }
   }
 </style>
+<script>
+document.querySelectorAll(".laesmereknap").forEach(button => {
+  button.addEventListener("click", function () {
+    var foldud = this.parentElement.nextElementSibling; // Finder den tilhørende .foldud div
+
+    if (foldud.style.display === "block") {
+      foldud.style.display = "none";
+      this.textContent = "Læs mere"; // Skifter knaptekst tilbage
+    } else {
+      foldud.style.display = "block";
+      this.textContent = "Læs mindre"; // Skifter knaptekst til 'Læs mindre'
+    }
+  });
+});
+
+
+
+</script>
