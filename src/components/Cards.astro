@@ -3,8 +3,10 @@
 ---
 
 <section class="cards">
-  <article class="card">
+
+  <article id="samtaleforlob" class="card">
     <img src="img/samtaleforlobimg.webp" alt="Samtaleforløb" />
+
     <div class="card_container">
       <div class="cardh3">
         <h3>Samtaleforløb<img src="img/Telefon.webp" alt="telefonIkon" /></h3>
@@ -21,7 +23,8 @@
       </p>
     </div>
   </article>
-  <article class="card">
+
+  <article id="akutradgivning" class="card">
     <img src="img/akutimg.webp" alt="akutrådgivning" />
     <div class="card_container">
       <div class="cardh3">
@@ -44,7 +47,8 @@
       </p>
     </div>
   </article>
-  <article class="card">
+
+  <article id="gruppeforlob" class="card">
     <img src="img/gruppeimg.webp" alt="gruppeforløb" />
     <div class="card_container">
       <div class="cardh3">
@@ -141,6 +145,12 @@
     }
     .card_container {
       padding-left: 30px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .card img {
+      scale: 80%;
+
     }
   }
 </style>
