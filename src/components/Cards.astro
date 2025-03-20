@@ -4,10 +4,10 @@
 
 <section class="cards">
   <article class="card">
-    <img src="img/samtaleforlobimg.png" alt="Samtaleforløb" />
+    <img src="img/samtaleforlobimg.webp" alt="Samtaleforløb" />
     <div class="card_container">
       <div class="cardh3">
-        <h3>Samtaleforløb<img src="img/Telefon.png" alt="telefonIkon" /></h3>
+        <h3>Samtaleforløb<img src="img/Telefon.webp" alt="telefonIkon" /></h3>
       </div>
 
       <p>Forløbet foregår over telefon og henvender sig ligesom akutrådgivningen til pårørende og misbrugsramte.</p>
@@ -22,10 +22,10 @@
     </div>
   </article>
   <article class="card">
-    <img src="img/akutimg.png" alt="akutrådgivning" />
+    <img src="img/akutimg.webp" alt="akutrådgivning" />
     <div class="card_container">
       <div class="cardh3">
-        <h3>Akutrådgivning<img src="img/chat.png" alt="Chatikon" /></h3>
+        <h3>Akutrådgivning<img src="img/chat.webp" alt="Chatikon" /></h3>
       </div>
 
       <p>Akutrådgivningen tilbyder gratis, fortrolige samtaler til misbrugsramte og pårørende.</p>
@@ -45,10 +45,10 @@
     </div>
   </article>
   <article class="card">
-    <img src="img/gruppeimg.png" alt="gruppeforløb" />
+    <img src="img/gruppeimg.webp" alt="gruppeforløb" />
     <div class="card_container">
       <div class="cardh3">
-        <h3>Gruppeforløb<img src="img/user-group.png" alt="gruppeikon" /></h3>
+        <h3>Gruppeforløb<img src="img/user-group.webp" alt="gruppeikon" /></h3>
       </div>
 
       <p>​Et gruppeforløb samler pårørende med samme type pårørenderelation til online møder. Samtalerne faciliteres af vores dygtige gruppeledere. Vores nuværende grupper henvender sig til følgende pårørende: Forældre, partnere og søskende til misbrugsramte samt voksne børn opvokset i en misbrugsramt familie.</p>
@@ -99,34 +99,33 @@
     padding-bottom: 10px;
   }
 
-.foldud {
-  display: none;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  grid-column: 2;
-  padding: 0 0 0 30px;
-}
+  .foldud {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    grid-column: 2;
+    padding: 0 0 0 30px;
+  }
 
+  .laesmereknap {
+    font-family: Poppins, sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #011961;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.laesmereknap {
-  font-family: Poppins, sans-serif;
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: #011961;
-  font-weight: 600;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Hover-effekt */
-.laesmereknap:hover {
-  background-color: #abe4dc;
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
-}
+  /* Hover-effekt */
+  .laesmereknap:hover {
+    background-color: #abe4dc;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+  }
 
   @media screen and (min-width: 900px) {
     .cards {
@@ -146,20 +145,17 @@
   }
 </style>
 <script>
-document.querySelectorAll(".laesmereknap").forEach(button => {
-  button.addEventListener("click", function () {
-    var foldud = this.parentElement.nextElementSibling; // Finder den tilhørende .foldud div
+  document.querySelectorAll(".laesmereknap").forEach((button) => {
+    button.addEventListener("click", function () {
+      var foldud = this.parentElement.nextElementSibling; // Finder den tilhørende .foldud div
 
-    if (foldud.style.display === "block") {
-      foldud.style.display = "none";
-      this.textContent = "Læs mere"; // Skifter knaptekst tilbage
-    } else {
-      foldud.style.display = "block";
-      this.textContent = "Læs mindre"; // Skifter knaptekst til 'Læs mindre'
-    }
+      if (foldud.style.display === "block") {
+        foldud.style.display = "none";
+        this.textContent = "Læs mere"; // Skifter knaptekst tilbage
+      } else {
+        foldud.style.display = "block";
+        this.textContent = "Læs mindre"; // Skifter knaptekst til 'Læs mindre'
+      }
+    });
   });
-});
-
-
-
 </script>
